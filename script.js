@@ -1,7 +1,6 @@
 "use strict";
 
-const array = ["0"];
-const newArr = array + 1;
+const array = [];
 let i;
 let result;
 
@@ -13,15 +12,11 @@ function initLoop() {
 }
 
 function loop() {
-  console.log("loop", array[i]);
-  result = array.unshift(newArr);
   console.log(array);
+  result = array.unshift(i);
+  if (result === 10) {
+    result = array.pop(i);
+  }
   i++;
-
-  //   setTimeout(loop, 1000);
-  //   if (i === 9) {
-  //     array = array.slice(0, 9);
-  //     console.log(array);
-  //     //     // setTimeout(loop, 400);
-  //   }
+  setTimeout(loop, 1000);
 }
